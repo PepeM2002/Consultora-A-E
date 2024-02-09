@@ -85,31 +85,36 @@ const i18n = getI18N({ currentLocale })
 </section>
 
 <script>
-	document.addEventListener('astro:page-load', () => {
-		const backgrounds = document.querySelectorAll('.background') as NodeListOf<HTMLElement>
-
-		if (window.IntersectionObserver == null) {
-			backgrounds.forEach((bkg) => {
-				bkg.style.backgroundImage = "url('" + bkg.dataset.src + "')"
-			})
-			return
-		}
-
-		function handleIntersection(entries: IntersectionObserverEntry[]) {
-			entries.map((entry) => {
-				if (entry.isIntersecting) {
-					const target = entry.target as HTMLElement
-					const { style, dataset } = target
-					style.backgroundImage = "url('" + dataset.src + "')"
-					observer.unobserve(entry.target)
-				}
-			})
-		}
-
-		const observer = new IntersectionObserver(handleIntersection, {
-			rootMargin: '100px'
+	document.addEventListener("astro:page-load", () => {
+	  const backgrounds = document.querySelectorAll(
+		".background"
+	  ) as NodeListOf<HTMLElement>
+  
+	  if (window.IntersectionObserver == null) {
+		backgrounds.forEach((bkg) => {
+		  bkg.style.backgroundImage = "url('" + bkg.dataset.src + "')"
 		})
-
-		backgrounds.forEach((bkg) => observer.observe(bkg))
+		return
+	  }
+  
+	  function handleIntersection(entries: IntersectionObserverEntry[]) {
+		entries.map((entry) => {
+		  if (entry.isIntersecting) {
+			const target = entry.target as HTMLElement
+			const { style, dataset } = target
+			// Item has crossed our observation
+			// threshold - load src from data-src
+			style.backgroundImage = "url('" + dataset.src + "')"
+			// Job done for this item - no need to watch it!
+			observer.unobserve(entry.target)
+		  }
+		})
+	  }
+  
+	  const observer = new IntersectionObserver(handleIntersection, {
+		rootMargin: "100px",
+	  })
+  
+	  backgrounds.forEach((bkg) => observer.observe(bkg))
 	})
-</script>
+  </script>
