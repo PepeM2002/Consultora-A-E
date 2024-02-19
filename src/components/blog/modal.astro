@@ -1,0 +1,44 @@
+<button id='openModalBtn' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+	Abrir Modal
+</button>
+
+<div
+	id='modal'
+	class='fixed inset-0 bg-black bg-opacity-50 py-48 hidden items-center justify-center'
+>
+	<div class='bg-white p-8 rounded shadow-lg'>
+		<p class='text-xl font-bold mb-4'>Contenido de la Modal</p>
+		<p>Este es un ejemplo de una ventana modal con Tailwind CSS y JavaScript.</p>
+
+		<button id='closeModalBtn' class='mt-4 bg-gray-500 text-white font-bold py-2 px-4 rounded'>
+			Cerrar Modal
+		</button>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const openModalBtn = document.getElementById('openModalBtn')
+		const closeModalBtn = document.getElementById('closeModalBtn')
+		const modal = document.getElementById('modal')
+
+		function openModal() {
+			modal.classList.remove('hidden')
+		}
+
+		function closeModal() {
+			modal.classList.add('hidden')
+		}
+
+		openModalBtn.addEventListener('click', openModal)
+		closeModalBtn.addEventListener('click', closeModal)
+
+		window.addEventListener('click', function (event) {
+			if (event.target === modal) {
+				closeModal()
+			} else {
+				console.error('No se encontro ninguna ventana modal')
+			}
+		})
+	})
+</script>

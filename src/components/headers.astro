@@ -1,93 +1,121 @@
 <!-- Header -->
-<nav class='fixed left-0 right-0 z-30 top-0 bg-white border-gray-200 dark:bg-orange-400 backdrop-opacity-85'>
-  <div class='flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4'>
-    <a href='../' class='flex items-center space-x-3 rtl:space-x-reverse'>
-      <img src='/images/logo.webp' class='h-14' alt='A-E Logo' />
-      <span class='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>A&E Consultoría</span>
-    </a>
-    <div class='flex items-center space-x-6 rtl:space-x-reverse'>
-      <a href='tel:7225763413' class='text-sm text-gray-500 dark:text-white hover:underline'>722 576 3413</a>
-      <a href='#' class='text-sm text-black dark:text-dark hover:underline'>Login</a>
-    </div>
-  </div>
+<nav
+	class='fixed left-0 right-0 z-30 top-0 bg-white border-gray-200 dark:bg-orange-400 backdrop-opacity-85'
+>
+	<div class='flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4'>
+		<a href='../' class='flex items-center space-x-3 rtl:space-x-reverse'>
+			<img src='/images/logo.webp' class='h-14' alt='A-E Logo' />
+			<span class='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'
+				>A&E Consultoría</span
+			>
+		</a>
+		<div class='flex items-center space-x-6 rtl:space-x-reverse'>
+			<a href='tel:7225763413' class='text-sm text-gray-500 dark:text-white hover:underline'
+				>722 576 3413</a
+			>
+			<a href='#' class='text-sm text-black dark:text-dark hover:underline'>Login</a>
+		</div>
+	</div>
 </nav>
 
 <!-- Menú de navegación para pantallas grandes -->
-<nav class='fixed z-30 left-0 right-0 top-[88px] bg-gray-50 dark:bg-green-700 hidden md:block'>
-  <div class='max-w-screen-xl px-4 py-3 mx-auto'>
-    <div class='flex items-center'>
-      <ul class='flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm'>
-        <li>
-          <a href='/' class='text-gray-900 dark:text-white hover:underline' aria-current='page'>INICIO</a>
-        </li>
-        <li>
-          <a href='/servicios/' class='text-gray-900 dark:text-white hover:underline'>SERVICIOS</a>
-        </li>
-        <li>
-          <a href='/educacion/' class='text-gray-900 dark:text-white hover:underline'>EDUCACION CONTINUA</a>
-        </li>
-        <li>
-          <a href='/experiencias/' class='text-gray-900 dark:text-white hover:underline'>EXPERIENCIAS</a>
-        </li>
-        <li>
-          <a href='/blog/' class='text-gray-900 dark:text-white hover:underline'>BLOG</a>
-        </li>
-        <li>
-          <a href='/sobre-nosotros/' class='text-gray-900 dark:text-white hover:underline'>SOBRE NOSOTROS</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+<nav class='fixed z-30 left-0 right-0 top-[88px] bg-gray-50 dark:bg-blue-700 hidden md:block'>
+	<div class='max-w-screen-xl px-4 py-3 mx-auto'>
+		<div class='flex items-center'>
+			<ul class='flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm'>
+				<li>
+					<a href='/' class='text-gray-900 dark:text-white hover:underline' aria-current='page'
+						>INICIO</a
+					>
+				</li>
+				<li>
+					<a href='/servicios/' class='text-gray-900 dark:text-white hover:underline'>SERVICIOS</a>
+				</li>
+				<li>
+					<a href='/educacion/' class='text-gray-900 dark:text-white hover:underline'
+						>EDUCACION CONTINUA</a
+					>
+				</li>
+				<li>
+					<a href='/experiencias/' class='text-gray-900 dark:text-white hover:underline'
+						>EXPERIENCIAS</a
+					>
+				</li>
+				<li>
+					<a href='/blog/' class='text-gray-900 dark:text-white hover:underline'>BLOG</a>
+				</li>
+				<li>
+					<a href='/AboutUs/' class='text-gray-900 dark:text-white hover:underline'
+						>SOBRE NOSOTROS</a
+					>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>
 
 <!-- Menú de navegación para pantallas pequeñas -->
-<nav class='fixed z-30 left-0 right-0 top-[88px]  bg-gray-50 dark:bg-green-700 md:hidden'>
-  <div class='max-w-screen-xl px-4 py-3 mx-auto'>
-    <div class='flex items-center'>
-      <!-- Botón para abrir el menú en pantallas pequeñas -->
-      <button id="mobile-menu-toggle" class="text-gray-900 dark:text-white hover:underline focus:outline-none transition duration-200 ease-in-out">
-        <!-- Ícono de barras horizontales para indicar menú -->
-        <span class="material-symbols-outlined">
-          menu
-        </span>
-      </button>
+<nav class='fixed z-30 left-0 right-0 top-[88px] bg-gray-50 dark:bg-blue-700 md:hidden'>
+	<div class='max-w-screen-xl px-4 py-3 mx-auto'>
+		<div class='flex items-center'>
+			<!-- Botón para abrir el menú en pantallas pequeñas -->
+			<button
+				id='mobile-menu-toggle'
+				class='text-gray-900 dark:text-white hover:underline focus:outline-none transition duration-200 ease-in-out'
+			>
+				<!-- Ícono de barras horizontales para indicar menú -->
+				<span class='material-symbols-outlined'> menu</span>
+			</button>
 
-      <!-- Lista de navegación para pantallas pequeñas -->
-      <ul id="mobile-menu" class=" flex flex-col font-medium mt-4 space-y-4 text-sm transition duration-300 ease-in-out">
-        <li>
-          <a href='/' class='text-gray-900 dark:text-white hover:underline' aria-current='page'>INICIO</a>
-        </li>
-        <li>
-          <a href='/servicios/' class='text-gray-900 dark:text-white hover:underline'>SERVICIOS</a>
-        </li>
-        <li>
-          <a href='/educacion/' class='text-gray-900 dark:text-white hover:underline'>EDUCACION CONTINUA</a>
-        </li>
-        <li>
-          <a href='/experiencias/' class='text-gray-900 dark:text-white hover:underline'>EXPERIENCIAS</a>
-        </li>
-        <li>
-          <a href='/blog/' class='text-gray-900 dark:text-white hover:underline'>BLOG</a>
-        </li>
-        <li>
-          <a href='/sobre-nosotros/' class='text-gray-900 dark:text-white hover:underline'>SOBRE NOSOTROS</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+			<!-- Lista de navegación para pantallas pequeñas -->
+			<ul
+				id='mobile-menu'
+				class='flex flex-col font-medium mt-4 space-y-4 text-sm transition duration-300 ease-in-out'
+			>
+				<li>
+					<a href='/' class='text-gray-900 dark:text-white hover:underline' aria-current='page'
+						>INICIO</a
+					>
+				</li>
+				<li>
+					<a href='/servicios/' class='text-gray-900 dark:text-white hover:underline'>SERVICIOS</a>
+				</li>
+				<li>
+					<a href='/educacion/' class='text-gray-900 dark:text-white hover:underline'
+						>EDUCACION CONTINUA</a
+					>
+				</li>
+				<li>
+					<a href='/experiencias/' class='text-gray-900 dark:text-white hover:underline'
+						>EXPERIENCIAS</a
+					>
+				</li>
+				<li>
+					<a href='/blog/' class='text-gray-900 dark:text-white hover:underline'>BLOG</a>
+				</li>
+				<li>
+					<a href='/sobre-nosotros/' class='text-gray-900 dark:text-white hover:underline'
+						>SOBRE NOSOTROS</a
+					>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+	document.addEventListener('DOMContentLoaded', function () {
+		const mobileMenuToggle = document.getElementById('mobile-menu-toggle')
+		const mobileMenu = document.getElementById('mobile-menu')
 
-    if (mobileMenuToggle && mobileMenu) {
-      mobileMenuToggle.addEventListener('click', function () {
-        mobileMenu.classList.toggle('hidden');
-      });
-    } else {
-      console.error("No se encontraron los elementos con los ID 'mobile-menu-toggle' o 'mobile-menu'");
-    }
-  });
+		if (mobileMenuToggle && mobileMenu) {
+			mobileMenuToggle.addEventListener('click', function () {
+				mobileMenu.classList.toggle('hidden')
+			})
+		} else {
+			console.error(
+				"No se encontraron los elementos con los ID 'mobile-menu-toggle' o 'mobile-menu'"
+			)
+		}
+	})
 </script>

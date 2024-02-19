@@ -1,51 +1,49 @@
+@keyframes slide {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
 
-  @keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .logos {
-    overflow: hidden;
-    padding: 60px 0;
-    background: rgb(16, 58, 22);
-    white-space: nowrap;
-    position: relative;
-  }
-  
-  .logos:before,
-  .logos:after {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    content: "";
-    z-index: 2;
-  }
-  
-  .logos:before {
-    left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.212));
-  }
-  
-  .logos:after {
-    right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.233));
-  }
-  
-  .logos:hover .logos-slide {
-    animation-play-state: paused;
-  }
+.logos {
+	overflow: hidden;
+	padding: 60px 0;
+	background: rgba(19, 16, 58, 0.281);
+	white-space: nowrap;
+	position: relative;
+}
 
-  .logos-slide {
-   
-    animation: 10s slide infinite linear;
-  }
-  
-  .logos-slide img {
-    height: 50px;
-    margin: 0 40px;
-  }
+.logos:before,
+.logos:after {
+	position: absolute;
+	top: 0;
+	width: 250px;
+	height: 100%;
+	content: '';
+	z-index: 2;
+}
+
+.logos:before {
+	left: 0;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.212));
+}
+
+.logos:after {
+	right: 0;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.233));
+}
+
+.logos:hover .logos-slide {
+	animation-play-state: paused;
+}
+
+.logos-slide {
+	animation: 10s slide infinite linear;
+}
+
+.logos-slide img {
+	height: 50px;
+	margin: 0 40px;
+}
