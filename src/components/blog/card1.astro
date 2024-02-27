@@ -3,141 +3,267 @@ import { getI18N } from '../../i18n'
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
+
 <!-- Tarjeta 1 -->
-<div class='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] w-80'>
-    <!-- Imagen de la tarjeta 1 -->
-    <img class='w-full h-44 object-cover rounded-t-xl carta-img' src='/D-1.webp' alt='Image Description' />
-    <!-- Contenido de la tarjeta 1 -->
-    <div class='p-3 md:p-5'>
-        <h3 class='text-[15.2px] font-bold text-gray-800 dark:text-white'>
-            Impacto de la inteligencia artificial en la retención del talento humano.
-        </h3>
-        <p class='mt-1 text-gray-500 dark:text-gray-400 text-xs'>
-            ¡Bienvenido a nuestro blog sobre estrategias para la retención del talento humano! A&E
-            capacitación y consultoría quiere compartir contigo ideas valiosas y enfoques innovadores para
-            mantener a tu talentoso equipo
-        </p>
-        <!-- Botón para abrir el modal de la tarjeta 1 -->
-        <button id='openModalBtn' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
-            Conoce más
-        </button>
-    </div>
+<div
+	class='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] w-80'
+>
+	<!-- Imagen de la tarjeta 1 -->
+	<img
+		class='w-full h-44 object-cover rounded-t-xl carta-img'
+		src='/D-1.webp'
+		alt='Image Description'
+	/>
+	<!-- Contenido de la tarjeta 1 -->
+	<div class='p-3 md:p-5'>
+		<h3 class='text-[15.2px] font-bold text-gray-800 dark:text-white'>
+			Impacto de la inteligencia artificial en la retención del talento humano.
+		</h3>
+		<p class='mt-1 text-gray-500 dark:text-gray-400 text-xs'>
+			¡Bienvenido a nuestro blog sobre estrategias para la retención del talento humano! A&E
+			capacitación y consultoría quiere compartir contigo ideas valiosas y enfoques innovadores para
+			mantener a tu talentoso equipo
+		</p>
+		<!-- Botón para abrir el modal de la tarjeta 1 -->
+		<div class=" w-full h-full py-2 px-16">
+			<button id='openModalBtn' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+				Conoce más
+			</button>
+		</div>
+	</div>
 </div>
 
 <style>
-    <!-- Estilo para la altura de la imagen de la tarjeta 1 -->
-    .carta-img {
-        height: 180px;
-    }
+	<!-- Estilo para la altura de la imagen de la tarjeta 1 -- > .carta-img {
+		height: 180px;
+	}
 </style>
 
 <!-- Modal de la tarjeta 1 -->
-<div id='modal' class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center'>
-    <div class='bg-white p-8 rounded shadow-lg'>
-        <!-- Título del modal obtenido mediante internacionalización -->
-        <p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_1} />
-        <!-- Contenido del modal obtenido mediante internacionalización -->
-        <p set:html={i18n.CONTENT_MODAL} class='p-10 text-sm' />
-        <!-- Botón para cerrar el modal de la tarjeta 1 -->
-        <button id='closeModalBtn' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
-            Cerrar
-        </button>
-    </div>
+<div
+	id='modal'
+	class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center px-3 overflow-y-auto'
+>
+	<div class='bg-white p-8 rounded shadow-lg'>
+		
+ 
+			<!-- Título del modal obtenido mediante internacionalización -->
+			<p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_1} />
+			<!-- Contenido del modal obtenido mediante internacionalización -->
+			<p set:html={i18n.CONTENT_MODAL} class='p-10 text-sm' />
+	
+		<!-- Botón para cerrar el modal de la tarjeta 1 -->
+		<button id='closeModalBtn' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+			Cerrar
+		</button>
+	</div>
 </div>
 
 <script>
-    <!-- Script para controlar la apertura y cierre del modal de la tarjeta 1 -->
-    document.addEventListener('DOMContentLoaded', function () {
-        const openModalBtn = document.getElementById('openModalBtn')
-        const closeModalBtn = document.getElementById('closeModalBtn')
-        const modal = document.getElementById('modal')
+	// Script para controlar la apertura y cierre del modal de la tarjeta 1
+	document.addEventListener('DOMContentLoaded', function () {
+		const openModalBtn = document.getElementById('openModalBtn')
+		const closeModalBtn = document.getElementById('closeModalBtn')
+		const modal = document.getElementById('modal')
 
-        function openModal() {
-            modal.classList.remove('hidden')
-        }
+		if (openModalBtn && closeModalBtn && modal) {
+			openModalBtn.addEventListener('click', openModal)
+			closeModalBtn.addEventListener('click', closeModal)
+		} else {
+			console.error('No se encontraron elementos con los ID especificados.')
+		}
 
-        function closeModal() {
-            modal.classList.add('hidden')
-        }
+		function openModal() {
+			if (modal) {
+				modal.classList.remove('hidden')
+			}
+		}
 
-        openModalBtn.addEventListener('click', openModal)
-        closeModalBtn.addEventListener('click', closeModal)
-
-        window.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                closeModal()
-            } else {
-                console.error('No se encontró ninguna ventana modal')
-            }
-        })
-    })
+		function closeModal() {
+			if (modal) {
+				modal.classList.add('hidden')
+			}
+		}
+		window.addEventListener('click', function (event) {
+			if (event.target === modal) {
+				closeModal()
+			}
+		})
+	})
 </script>
 
 <!-- Tarjeta 2 -->
-<div class='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] w-80'>
-    <!-- Imagen de la tarjeta 2 -->
-    <img class='w-full h-44 object-cover rounded-t-xl carta-img' src='/D-2.webp' alt='Image Description' />
-    <!-- Contenido de la tarjeta 2 -->
-    <div class='p-3 md:p-5'>
-        <h3 class='text-base font-bold text-gray-800 dark:text-white'>
-            Estrategias para la retención del talento humano
-        </h3>
-        <p class='mt-1 text-gray-500 dark:text-gray-400 text-xs'>
-            Inteligencia artificial En palabras de Rouhiainen (2018) define la inteligencia artificial como
-            “la habilidad de los ordenadores para hacer actividades que normalmente requieren inteligencia humana.
-        </p>
-        <!-- Botón para abrir el modal de la tarjeta 2 -->
-        <button id='openModalBtn1' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
-            Conoce más
-        </button>
-    </div>
+<div
+	class='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] w-80'
+>
+	<!-- Imagen de la tarjeta 2 -->
+	<img
+		class='w-full h-44 object-cover rounded-t-xl carta-img'
+		src='/D-2.webp'
+		alt='Image Description'
+	/>
+	<!-- Contenido de la tarjeta 2 -->
+	<div class='p-3 md:p-5'>
+		<h3 class='text-base font-bold text-gray-800 dark:text-white'>
+			Estrategias para la retención del talento humano
+		</h3>
+		<p class='mt-1 text-gray-500 dark:text-gray-400 text-xs'>
+			Inteligencia artificial En palabras de Rouhiainen (2018) define la inteligencia artificial
+			como “la habilidad de los ordenadores para hacer actividades que normalmente requieren
+			inteligencia humana.
+		</p>
+		<!-- Botón para abrir el modal de la tarjeta 2 -->
+		<div class=" w-full h-full py-2 px-16">
+			<button id='openModalBtn1' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+				Conoce más
+			</button>
+		</div>
+	</div>
 </div>
 
 <style>
-    <!-- Estilo para la altura de la imagen de la tarjeta 2 -->
-    .carta-img {
-        height: 180px; 
-    }
+	/* <!-- Estilo para la altura de la imagen de la tarjeta 2 --> */
+	.carta-img {
+		height: 180px;
+	}
 </style>
 
 <!-- Modal de la tarjeta 2 -->
-<div id='modal1' class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center'>
-    <div class='bg-white p-8 rounded shadow-lg'>
-        <!-- Título del modal obtenido mediante internacionalización -->
-        <p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_2} />
-        <!-- Contenido del modal obtenido mediante internacionalización -->
-        <p set:html={i18n.CONTENT_MODAL_2} class='p-10 text-black text-sm' />
-        <!-- Botón para cerrar el modal de la tarjeta 2 -->
-        <button id='closeModalBtn1' class='mt-4 bg-gray-500 text-white font-bold py-2 px-4 rounded'>
-            Cerrar
-        </button>
-    </div>
+<div
+	id='modal1'
+	class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center px-3 overflow-y-auto'
+>
+	<div class='bg-white p-8 rounded shadow-lg'>
+		<!-- Título del modal obtenido mediante internacionalización -->
+		<p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_2} />
+		<!-- Contenido del modal obtenido mediante internacionalización -->
+		<p set:html={i18n.CONTENT_MODAL_2} class='p-10 text-black text-sm' />
+		<!-- Botón para cerrar el modal de la tarjeta 2 -->
+		<button id='closeModalBtn1' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+			Cerrar
+		</button>
+	</div>
 </div>
 
 <script>
-    <!-- Script para controlar la apertura y cierre del modal de la tarjeta 2 -->
-    document.addEventListener('DOMContentLoaded', function () {
-        const openModalBtn = document.getElementById('openModalBtn1')
-        const closeModalBtn = document.getElementById('closeModalBtn1')
-        const modal = document.getElementById('modal1')
+	// Script para controlar la apertura y cierre del modal de la tarjeta 2
 
-        function openModal() {
-            modal.classList.remove('hidden')
-        }
+	document.addEventListener('DOMContentLoaded', function () {
+		const openModalBtn = document.getElementById('openModalBtn1')
+		const closeModalBtn = document.getElementById('closeModalBtn1')
+		const modal = document.getElementById('modal1')
 
-        function closeModal() {
-            modal.classList.add('hidden')
-        }
+		if (openModalBtn && closeModalBtn && modal) {
+			openModalBtn.addEventListener('click', openModal)
+			closeModalBtn.addEventListener('click', closeModal)
+		} else {
+			console.error('No se encontraron elementos con los ID especificados.')
+		}
 
-        openModalBtn.addEventListener('click', openModal)
-        closeModalBtn.addEventListener('click', closeModal)
+		function openModal() {
+			if (modal) {
+				modal.classList.remove('hidden')
+			}
+		}
 
-        window.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                closeModal()
-            } else {
-                console.error('No se encontró ninguna ventana modal')
-            }
-        })
-    })
+		function closeModal() {
+			if (modal) {
+				modal.classList.add('hidden')
+			}
+		}
+		window.addEventListener('click', function (event) {
+			if (event.target === modal) {
+				closeModal()
+			}
+		})
+	})
+</script>
+
+<!-- Tarjeta 3-->
+<div
+	class='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] w-80'
+>
+	<!-- Imagen de la tarjeta 3-->
+	<img
+		class='w-full h-44 object-cover rounded-t-xl carta-img'
+		src='/D-3.webp'
+		alt='Image Description'
+	/>
+	<!-- Contenido de la tarjeta 3 -->
+	<div class='p-3 md:p-5'>
+		<h3 class='text-base font-bold text-gray-800 dark:text-white'>FEEDBACK DE LOS EMPLEADOS</h3>
+		<p class='mt-1 text-gray-500 dark:text-gray-400 text-xs'>
+			Comunicación La comunicación en las organizaciones juega un papel de vital importancia, y esta
+			puede estar en función de muchas formas, como en la manera de relacionarse con el cliente
+		</p>
+		<!-- Botón para abrir el modal de la tarjeta 3 -->
+		<div class=" w-full h-full py-4 px-16">
+
+			<button id='openModalBtn2' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+				Conoce más
+			</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	/* <!-- Estilo para la altura de la imagen de la tarjeta 3 --> */
+	.carta-img {
+		height: 180px;
+	}
+</style>
+
+<!-- Modal de la tarjeta 2 -->
+<div
+	id='modal2'
+	class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center px-3 overflow-y-auto'
+>
+	<div class='bg-white p-8 rounded shadow-lg'>
+
+
+	<!-- Título del modal obtenido mediante internacionalización -->
+	<p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_3} />
+	<!-- Contenido del modal obtenido mediante internacionalización -->
+	<h3 class="text-base font-bold " set:html={i18n.SUBTITLE_MODAL_3}></h3>
+	<p set:html={i18n.CONTENT_MODAL_3} class='p-10 text-black text-sm' />
+
+<!-- Botón para cerrar el modal de la tarjeta 2 -->
+		<button id='closeModalBtn2' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+			Cerrar
+		</button>
+	</div>
+</div>
+
+<script>
+	// Script para controlar la apertura y cierre del modal de la tarjeta 2
+
+	document.addEventListener('DOMContentLoaded', function () {
+		const openModalBtn = document.getElementById('openModalBtn2')
+		const closeModalBtn = document.getElementById('closeModalBtn2')
+		const modal = document.getElementById('modal2')
+
+		if (openModalBtn && closeModalBtn && modal) {
+			openModalBtn.addEventListener('click', openModal)
+			closeModalBtn.addEventListener('click', closeModal)
+		} else {
+			console.error('No se encontraron elementos con los ID especificados.')
+		}
+
+		function openModal() {
+			if (modal) {
+				modal.classList.remove('hidden')
+			}
+		}
+
+		function closeModal() {
+			if (modal) {
+				modal.classList.add('hidden')
+			}
+		}
+		window.addEventListener('click', function (event) {
+			if (event.target === modal) {
+				closeModal()
+			}
+		})
+	})
 </script>

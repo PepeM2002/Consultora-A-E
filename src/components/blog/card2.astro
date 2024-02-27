@@ -3,3 +3,87 @@ import { getI18N } from '../../i18n'
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
+
+<!-- Tarjeta 3-->
+<div
+	class='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] w-80'
+>
+	<!-- Imagen de la tarjeta 3-->
+	<img
+		class='w-full h-44 object-cover rounded-t-xl carta-img'
+		src='/D-3.webp'
+		alt='Image Description'
+	/>
+	<!-- Contenido de la tarjeta 3 -->
+	<div class='p-3 md:p-5'>
+		<h3 class='text-base font-bold text-gray-800 dark:text-white'>Teletrabajo y calidad de vida</h3>
+		<p class='mt-1 text-gray-500 dark:text-gray-400 text-xs'>
+			En la actualidad el ser humano se encuentra viviendo en un mundo en constante cambio, y el
+			mercado laboral no es la excepción, pues cada vez se vuelve mucho más
+		</p>
+		<!-- Botón para abrir el modal de la tarjeta 3 -->
+		<div class='w-full h-full py-9 px-16'>
+			<button id='openModalBtn3' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+				Conoce más
+			</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	/* <!-- Estilo para la altura de la imagen de la tarjeta 3 --> */
+	.carta-img {
+		height: 180px;
+	}
+</style>
+
+<!-- Modal de la tarjeta 2 -->
+<div
+    id='modal3'
+    class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center px-3 overflow-y-auto'
+>
+    <div class='bg-white p-8 rounded shadow-lg max-h-80v'>
+        <!-- Título del modal obtenido mediante internacionalización -->
+        <p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_4} />
+        <!-- Contenido del modal obtenido mediante internacionalización -->
+        <p set:html={i18n.CONTENT_MODAL_4} class='p-10 text-black text-sm' />
+        <!-- Botón para cerrar el modal de la tarjeta 2 -->
+        <button id='closeModalBtn3' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+            Cerrar
+        </button>
+    </div>
+</div>
+
+<script>
+	// Script para controlar la apertura y cierre del modal de la tarjeta 2
+
+	document.addEventListener('DOMContentLoaded', function () {
+		const openModalBtn = document.getElementById('openModalBtn3')
+		const closeModalBtn = document.getElementById('closeModalBtn3')
+		const modal = document.getElementById('modal3')
+
+		if (openModalBtn && closeModalBtn && modal) {
+			openModalBtn.addEventListener('click', openModal)
+			closeModalBtn.addEventListener('click', closeModal)
+		} else {
+			console.error('No se encontraron elementos con los ID especificados.')
+		}
+
+		function openModal() {
+			if (modal) {
+				modal.classList.remove('hidden')
+			}
+		}
+
+		function closeModal() {
+			if (modal) {
+				modal.classList.add('hidden')
+			}
+		}
+		window.addEventListener('click', function (event) {
+			if (event.target === modal) {
+				closeModal()
+			}
+		})
+	})
+</script>
