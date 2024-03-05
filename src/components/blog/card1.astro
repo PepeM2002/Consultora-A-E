@@ -25,7 +25,7 @@ const i18n = getI18N({ currentLocale })
 			mantener a tu talentoso equipo
 		</p>
 		<!-- Botón para abrir el modal de la tarjeta 1 -->
-		<div class=" w-full h-full py-2 px-16">
+		<div class='w-full h-full py-2 px-16'>
 			<button id='openModalBtn' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
 				Conoce más
 			</button>
@@ -34,7 +34,7 @@ const i18n = getI18N({ currentLocale })
 </div>
 
 <style>
-	<!-- Estilo para la altura de la imagen de la tarjeta 1 -- > .carta-img {
+	.carta-img {
 		height: 180px;
 	}
 </style>
@@ -45,13 +45,18 @@ const i18n = getI18N({ currentLocale })
 	class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center px-3 overflow-y-auto'
 >
 	<div class='bg-white p-8 rounded shadow-lg'>
-		
- 
-			<!-- Título del modal obtenido mediante internacionalización -->
-			<p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_1} />
-			<!-- Contenido del modal obtenido mediante internacionalización -->
+		<!-- Título del modal obtenido mediante internacionalización -->
+		<p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_1} />
+		<!-- Contenido del modal obtenido mediante internacionalización -->
+		<div class='lg:flex block'>
 			<p set:html={i18n.CONTENT_MODAL} class='p-10 text-sm' />
-	
+			<img class='h-56 rounded-2xl shadow-2xl shadow-black' src='/B-1.webp' />
+		</div>
+			<!-- contenido de subtitulo  -->
+		<div class=" p-10">
+			<h2 class="font-bold" set:html={i18n.SUBTITLE_MODAL_1}></h2>
+			<p class="text-balance text-sm " set:html={i18n.CONTENT_SUBTITLE_1}> </p>
+		</div>
 		<!-- Botón para cerrar el modal de la tarjeta 1 -->
 		<button id='closeModalBtn' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
 			Cerrar
@@ -113,7 +118,7 @@ const i18n = getI18N({ currentLocale })
 			inteligencia humana.
 		</p>
 		<!-- Botón para abrir el modal de la tarjeta 2 -->
-		<div class=" w-full h-full py-2 px-16">
+		<div class='w-full h-full py-2 px-16'>
 			<button id='openModalBtn1' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
 				Conoce más
 			</button>
@@ -197,8 +202,7 @@ const i18n = getI18N({ currentLocale })
 			puede estar en función de muchas formas, como en la manera de relacionarse con el cliente
 		</p>
 		<!-- Botón para abrir el modal de la tarjeta 3 -->
-		<div class=" w-full h-full py-4 px-16">
-
+		<div class='w-full h-full py-4 px-16'>
 			<button id='openModalBtn2' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
 				Conoce más
 			</button>
@@ -219,15 +223,13 @@ const i18n = getI18N({ currentLocale })
 	class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center px-3 overflow-y-auto'
 >
 	<div class='bg-white p-8 rounded shadow-lg'>
+		<!-- Título del modal obtenido mediante internacionalización -->
+		<p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_3} />
+		<!-- Contenido del modal obtenido mediante internacionalización -->
+		<h3 class='text-base font-bold' set:html={i18n.SUBTITLE_MODAL_3} />
+		<p set:html={i18n.CONTENT_MODAL_3} class='p-10 text-black text-sm' />
 
-
-	<!-- Título del modal obtenido mediante internacionalización -->
-	<p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_3} />
-	<!-- Contenido del modal obtenido mediante internacionalización -->
-	<h3 class="text-base font-bold " set:html={i18n.SUBTITLE_MODAL_3}></h3>
-	<p set:html={i18n.CONTENT_MODAL_3} class='p-10 text-black text-sm' />
-
-<!-- Botón para cerrar el modal de la tarjeta 2 -->
+		<!-- Botón para cerrar el modal de la tarjeta 2 -->
 		<button id='closeModalBtn2' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
 			Cerrar
 		</button>
