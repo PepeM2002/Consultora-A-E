@@ -52,10 +52,10 @@ const i18n = getI18N({ currentLocale })
 			<p set:html={i18n.CONTENT_MODAL} class='p-10 text-sm' />
 			<img class='h-56 rounded-2xl shadow-2xl shadow-black' src='/B-1.webp' />
 		</div>
-			<!-- contenido de subtitulo  -->
-		<div class=" p-10">
-			<h2 class="font-bold" set:html={i18n.SUBTITLE_MODAL_1}></h2>
-			<p class="text-balance text-sm " set:html={i18n.CONTENT_SUBTITLE_1}> </p>
+		<!-- contenido de subtitulo  -->
+		<div class='p-10'>
+			<h2 class='font-bold' set:html={i18n.SUBTITLE_MODAL_1} />
+			<p class='text-balance text-sm' set:html={i18n.CONTENT_SUBTITLE_1} />
 		</div>
 		<!-- Botón para cerrar el modal de la tarjeta 1 -->
 		<button id='closeModalBtn' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
@@ -64,38 +64,7 @@ const i18n = getI18N({ currentLocale })
 	</div>
 </div>
 
-<script>
-	// Script para controlar la apertura y cierre del modal de la tarjeta 1
-	document.addEventListener('DOMContentLoaded', function () {
-		const openModalBtn = document.getElementById('openModalBtn')
-		const closeModalBtn = document.getElementById('closeModalBtn')
-		const modal = document.getElementById('modal')
-
-		if (openModalBtn && closeModalBtn && modal) {
-			openModalBtn.addEventListener('click', openModal)
-			closeModalBtn.addEventListener('click', closeModal)
-		} else {
-			console.error('No se encontraron elementos con los ID especificados.')
-		}
-
-		function openModal() {
-			if (modal) {
-				modal.classList.remove('hidden')
-			}
-		}
-
-		function closeModal() {
-			if (modal) {
-				modal.classList.add('hidden')
-			}
-		}
-		window.addEventListener('click', function (event) {
-			if (event.target === modal) {
-				closeModal()
-			}
-		})
-	})
-</script>
+<script src='../logic//Cards-blog.ts'></script>
 
 <!-- Tarjeta 2 -->
 <div
@@ -150,40 +119,6 @@ const i18n = getI18N({ currentLocale })
 	</div>
 </div>
 
-<script>
-	// Script para controlar la apertura y cierre del modal de la tarjeta 2
-
-	document.addEventListener('DOMContentLoaded', function () {
-		const openModalBtn = document.getElementById('openModalBtn1')
-		const closeModalBtn = document.getElementById('closeModalBtn1')
-		const modal = document.getElementById('modal1')
-
-		if (openModalBtn && closeModalBtn && modal) {
-			openModalBtn.addEventListener('click', openModal)
-			closeModalBtn.addEventListener('click', closeModal)
-		} else {
-			console.error('No se encontraron elementos con los ID especificados.')
-		}
-
-		function openModal() {
-			if (modal) {
-				modal.classList.remove('hidden')
-			}
-		}
-
-		function closeModal() {
-			if (modal) {
-				modal.classList.add('hidden')
-			}
-		}
-		window.addEventListener('click', function (event) {
-			if (event.target === modal) {
-				closeModal()
-			}
-		})
-	})
-</script>
-
 <!-- Tarjeta 3-->
 <div
 	class='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] w-80'
@@ -236,36 +171,129 @@ const i18n = getI18N({ currentLocale })
 	</div>
 </div>
 
+
+
+<!-- Tarjeta 4-->
+<div
+	class='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] w-80'
+>
+	<!-- Imagen de la tarjeta 3-->
+	<img
+		class='w-full h-44 object-cover rounded-t-xl carta-img'
+		src='/D-4.webp'
+		alt='Image Description'
+	/>
+	<!-- Contenido de la tarjeta 3 -->
+	<div class='p-3 md:p-5'>
+		<h3 class='text-base font-bold text-gray-800 dark:text-white'>Teletrabajo y calidad de vida</h3>
+		<p class='mt-1 text-gray-500 dark:text-gray-400 text-xs'>
+			En la actualidad el ser humano se encuentra viviendo en un mundo en constante cambio, y el
+			mercado laboral no es la excepción, pues cada vez se vuelve mucho más
+		</p>
+		<!-- Botón para abrir el modal de la tarjeta 3 -->
+		<div class='w-full h-full py-9 px-16'>
+			<button id='openModalBtn3' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+				Conoce más
+			</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	/* <!-- Estilo para la altura de la imagen de la tarjeta 3 --> */
+	.carta-img {
+		height: 180px;
+	}
+</style>
+
+<!-- Modal de la tarjeta 2 -->
+<div
+	id='modal3'
+	class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center px-3 overflow-y-auto'
+>
+	<div class='bg-white p-8 rounded shadow-lg max-h-80v'>
+		<!-- Título del modal obtenido mediante internacionalización -->
+		<p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_4} />
+		<!-- Contenido del modal obtenido mediante internacionalización -->
+		<p set:html={i18n.CONTENT_MODAL_4} class='p-10 text-black text-sm' />
+		<!-- Botón para cerrar el modal de la tarjeta 2 -->
+		<div class="w-full h-full py-2 px-16">
+			<button id='closeModalBtn3' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+				Cerrar
+			</button>
+		</div>
+	</div>
+</div>
+
 <script>
-	// Script para controlar la apertura y cierre del modal de la tarjeta 2
-
-	document.addEventListener('DOMContentLoaded', function () {
-		const openModalBtn = document.getElementById('openModalBtn2')
-		const closeModalBtn = document.getElementById('closeModalBtn2')
-		const modal = document.getElementById('modal2')
-
-		if (openModalBtn && closeModalBtn && modal) {
-			openModalBtn.addEventListener('click', openModal)
-			closeModalBtn.addEventListener('click', closeModal)
-		} else {
-			console.error('No se encontraron elementos con los ID especificados.')
-		}
-
-		function openModal() {
-			if (modal) {
-				modal.classList.remove('hidden')
-			}
-		}
-
-		function closeModal() {
-			if (modal) {
-				modal.classList.add('hidden')
-			}
-		}
-		window.addEventListener('click', function (event) {
-			if (event.target === modal) {
-				closeModal()
-			}
-		})
-	})
+	
 </script>
+
+<!-- Tarjeta 4-->
+<div
+	class='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] w-80'
+>
+	<!-- Imagen de la tarjeta 4-->
+	<img
+		class='w-full h-44 object-cover rounded-t-xl carta-img'
+		src='/D-5.webp'
+		alt='Image Description'
+	/>
+	<!-- Contenido de la tarjeta 3 -->
+	<div class='p-3 md:p-5'>
+		<h3 class='text-base font-bold text-gray-800 dark:text-white'>
+			Lidiar con la maternidad y la vida profesional.
+		</h3>
+		<p class='mt-1 text-gray-500 dark:text-gray-400 text-xs'>
+			Escrito por: Lic. Liliana Flores Hace algunos días los chicos de A&E me preguntaron si podía
+			escribir sobre los derechos de las madres trabajadoras y empecé a recordar primero a
+		</p>
+		<!-- Botón para abrir el modal de la tarjeta 3 -->
+		<div class='w-full h-full py-4 px-16'>
+			<button id='openModalBtn4' class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+				Conoce más
+			</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	/* <!-- Estilo para la altura de la imagen de la tarjeta 3 --> */
+	.carta-img {
+		height: 180px;
+	}
+</style>
+
+<!-- Modal de la tarjeta 5 -->
+<div
+	id='modal4'
+	class='fixed inset-0 bg-black bg-opacity-50 z-40 py-10 hidden items-center justify-center px-3 overflow-y-auto'
+>
+	<div class='bg-white p-8 rounded shadow-lg max-h-80v'>
+		<!-- Título del modal obtenido mediante internacionalización -->
+		<p class='text-xl font-bold mb-4' set:html={i18n.TITLE_MODAL_5} />
+		<h3 class="text-base font-bold mb-3" set:html={i18n.SUBTITLE_MODAL_5}></h3>
+		<!-- Contenido del modal obtenido mediante internacionalización -->
+		<p set:html={i18n.CONTENT_MODAL_5} class='p-6 text-black text-sm' />
+		<br>
+		<p set:html={i18n['SUBTITLE_MODAL_5,1']} class="p-4"></p>
+		<!-- Botón para cerrar el modal de la tarjeta 2 -->
+		<div class="block lg:flex p-5 bg-[#00000060]">
+			<video  src="/AUDIO.mp4" controls autoplay muted loop class="rounded-3xl   lg:w-[280px] lg:h-[240px] "></video>
+		<p set:html={i18n['CONTENT_MODAL_5.1']} class="text-sm text-black p-4"></p>
+		</div>
+		<div>
+			<p set:html={i18n['CONTENT_MODAL_5.2']} class="text-sm text-balance  text-black "></p>	
+		</div>
+			<button id='closeModalBtn4' class='mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+				Cerrar
+			</button>
+
+	</div>
+</div>
+
+<script>
+
+</script>
+
+
