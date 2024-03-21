@@ -1,10 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Headers from "../components/headers.astro"
-import Time from "../components/Back/tarjetatime.astro"
+import Tarjeta from "../components/Educacion continua/tarjetatime.astro"
+import Diplomados from "../components/Educacion continua/diplomado.astro"
+import Footer from "../components/footer.astro"
 ---
 
-<Layout title=" ">
+<Layout title="Educacion continua ">
     <Headers/>
-    <Time/>
+   <Tarjeta/>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2  lg:grid-cols-3 gap-4 auto-rows-[400px] mx-auto p-8  md:p-4 lg:p-10  ">
+    <Diplomados/>
+</div >
+<Footer/>
 </Layout>
