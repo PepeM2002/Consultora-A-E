@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
-import { supabase } from "../db/supabase";
+import { supabase } from "../../../lib/supabase";
 
-export const POST: APIRoute = async ({ request, cookies, redirect }) => {
+export const POST: APIRoute = async ({ request, redirect }) => {
   const formData = await request.formData();
   const email = formData.get("email")?.toString();
   const password = formData.get("password")?.toString();
@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
     return new Response("Correo electrónico y contraseña obligatorios", { status: 400 });
   }
 
-  const { data, error } = await supabase.auth.signInWithPassword({
+  const { error } = await supabase.auth.signUp({
     email,
     password,
   });
@@ -19,12 +19,5 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
     return new Response(error.message, { status: 500 });
   }
 
-  const { access_token, refresh_token } = data.session;
-  cookies.set("sb-access-token", access_token, {
-    path: "/",
-  });
-  cookies.set("sb-refresh-token", refresh_token, {
-    path: "/",
-  });
-  return redirect("");
+  return redirect("/signin");
 };
