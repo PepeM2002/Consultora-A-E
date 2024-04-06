@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layoutcursos.astro'
+---
+
+<Layout title='Cursos'>
+	<!-- Encabezado -->
+	<div class='flex items-center justify-between mb-6'>
+		<div class='flex'>
+			<img id='logo' src='/logo.webp' class='h-14' alt='A-E Logo' />
+			<h1 class='text-3xl font-semibold text-center text-white'>Cursos A&E</h1>
+		</div>
+
+		<div>
+			<a href='/signin/' class='text-blue-500 hover:text-blue-600'>Iniciar Sesión</a>
+			<span class='mx-2'>|</span>
+			<a href='/register/' class='text-blue-500 hover:text-blue-600'>Regístrate</a>
+		</div>
+	</div>
+
+	<!-- Navegación -->
+	<div class='flex flex-wrap justify-center mb-8'>
+		<a href='#' class='mx-2 py-2 px-4 rounded bg-blue-500 text-white hover:bg-blue-600'>Inicio</a>
+		<a href='#' class='mx-2 py-2 px-4 rounded bg-blue-500 text-white hover:bg-blue-600'>Cursos</a>
+		<a href='/' class='mx-2 py-2 px-4 rounded bg-blue-500 text-white hover:bg-blue-600'>Nosotros</a>
+	</div>
+	<div>
+		<h1 class='text-3xl font-semibold text-center text-white'>Bienvenido a los cursos</h1>
+	</div>
+
+	<!-- Categorías de Cursos -->
+	<div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8'>
+		<div class='bg-white rounded-lg shadow-md p-4'>
+			<h2 class='text-lg font-semibold mb-2'>Programación</h2>
+			<!-- Imagen de Programación -->
+			<img src='https://via.placeholder.com/150' alt='Programación' class='mb-2 rounded-md' />
+			<!-- Lista de cursos -->
+		</div>
+		<div class='bg-white rounded-lg shadow-md p-4'>
+			<h2 class='text-lg font-semibold mb-2'>Diseño Gráfico</h2>
+			<!-- Imagen de Diseño Gráfico -->
+			<img src='https://via.placeholder.com/150' alt='Diseño Gráfico' class='mb-2 rounded-md' />
+			<!-- Lista de cursos -->
+		</div>
+		<div class='bg-white rounded-lg shadow-md p-4'>
+			<h2 class='text-lg font-semibold mb-2'>Marketing Digital</h2>
+			<!-- Imagen de Marketing Digital -->
+			<img src='https://via.placeholder.com/150' alt='Marketing Digital' class='mb-2 rounded-md' />
+			<!-- Lista de cursos -->
+		</div>
+		<div class='bg-white rounded-lg shadow-md p-4'>
+			<h2 class='text-lg font-semibold mb-2'>Desarrollo Web</h2>
+			<!-- Imagen de Desarrollo Web -->
+			<img src='https://via.placeholder.com/150' alt='Desarrollo Web' class='mb-2 rounded-md' />
+			<!-- Lista de cursos -->
+		</div>
+	</div>
+
+	<!-- Sección de Servicios -->
+	<div class='grid grid-cols-1 md:grid-cols-3 gap-4 mb-8'>
+		<div class='bg-white rounded-lg shadow-md p-4'>
+			<h2 class='text-lg font-semibold mb-2'>Cursos Online</h2>
+			<!-- Descripción de servicios -->
+		</div>
+		<div class='bg-white rounded-lg shadow-md p-4'>
+			<h2 class='text-lg font-semibold mb-2'>Recursos Educativos</h2>
+			<!-- Descripción de servicios -->
+		</div>
+		<div class='bg-white rounded-lg shadow-md p-4'>
+			<h2 class='text-lg font-semibold mb-2'>Comunidad</h2>
+			<!-- Descripción de servicios -->
+		</div>
+	</div>
+
+	<!-- Por qué elegirnos -->
+	<div class='bg-white rounded-lg shadow-md p-4 mb-8'>
+		<h2 class='text-xl font-semibold mb-4'>¿Por Qué Elegirnos?</h2>
+		<!-- Lista de beneficios -->
+	</div>
+
+	<div
+		class='absolute bottom-0 left-0 z-0 h-1/3 w-full border-b'
+		style='background-image: linear-gradient(to right top, rgba(79, 70, 229, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);'
+	>
+	</div>
+	<div
+		class='absolute bottom-0 right-0 z-0 h-1/3 w-full'
+		style='background-image: linear-gradient(to left top, rgba(220, 38, 38, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);'
+	>
+	</div>
+</Layout>
