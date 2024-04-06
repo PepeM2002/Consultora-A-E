@@ -9,8 +9,8 @@
 
 .logos {
 	overflow: hidden;
-	padding: 60px 0;
-	background: rgba(19, 16, 58, 0.281);
+	padding: 50px 0;
+	background: rgba(97, 96, 107, 0.281);
 	white-space: nowrap;
 	position: relative;
 }
@@ -27,12 +27,12 @@
 
 .logos:before {
 	left: 0;
-	background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.212));
+	background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(34, 23, 23, 0.41));
 }
 
 .logos:after {
 	right: 0;
-	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.233));
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(52, 43, 43, 0.233));
 }
 
 .logos:hover .logos-slide {
@@ -40,10 +40,10 @@
 }
 
 .logos-slide {
-	animation: 10s slide infinite linear;
+	animation: 15s slide infinite linear;
 }
 
 .logos-slide img {
-	height: 50px;
+	height: 80px;
 	margin: 0 40px;
 }
