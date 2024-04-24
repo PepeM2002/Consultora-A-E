@@ -7,16 +7,17 @@ import Footer from '../components/footer.astro';
 import Logos from '../components/logos.astro'
 import Accede from '../components/accede.astro';
 import Contacto from '../components/contacto.astro';
+import   SpeedInsights  from "@vercel/speed-insights/astro"
 ---
 
 <Layout title="A&E| Consultoria">
+<SpeedInsights />
 	<Headers/>
 	<Section1/>
 	<Bento/>
 	<Accede/>
 	<Logos/>
 		<Contacto/>
-	</div>
 	<br>
 	<Footer/>
 </Layout>
