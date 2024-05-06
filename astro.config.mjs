@@ -8,5 +8,16 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   output: 'server',
   integrations: [tailwind()],
-  adapter: cloudflare()
+  adapter: cloudflare(),
+  image: {
+    // Example: Enable the Sharp-based image service with a custom config
+    service: {
+       entrypoint: 'astro/assets/services/sharp',
+       config: {
+         limitInputPixels: false,
+      },
+     },
+  },
 });
+
+

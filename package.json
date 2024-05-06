@@ -20,5 +20,9 @@
     "cors": "^2.8.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
-  }
+  },
+  "description": "![image](https://github.com/PepeM2002/Consultora-A-E/assets/91429290/1a07aaa7-3f0d-4559-9bb9-3aea1ce22bac)",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
