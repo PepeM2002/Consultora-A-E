@@ -1,10 +1,16 @@
 ---
 import Layout from '../layouts/Layoutcursos.astro'
 import Principio from '../components/Cursos/Principio.astro'
-import  SpeedInsights  from "@vercel/speed-insights/astro"
+import SpeedInsights  from "@vercel/speed-insights/astro"
+import Venta from '../components/Cursos/venta.astro'
+import Footercurso from '../components/Cursos/componentcursos/footercurso.astro'
+import Carousel from '../components/Cursos/componentcursos/carousel.html'
 ---
 
 <Layout title='Cursos'>
     <SpeedInsights/>
 <Principio/>
+<Carousel/>
+<Venta/>
+<Footercurso/>
 </Layout>

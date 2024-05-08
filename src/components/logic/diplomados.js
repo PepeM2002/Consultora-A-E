@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
          })
       })
-  
-
-})
+    // Event listener para la tecla "Esc"
+    document.addEventListener('keyup', function (event) {
+      if (event.key === 'Escape' || event.key === 'Esc') {
+          modal.forEach(modal => {
+              closeModal(modal);
+          });
+      }
+  });
+});

@@ -33,4 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    
+    document.addEventListener('keyup', function(event){
+        if(event.key === 'Escape' || event.key === 'Esc'){
+            modals.forEach(modal =>{
+                closeModal(modal)
+            }
+            )
+        }
+    })
 });
