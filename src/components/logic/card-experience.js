@@ -1,29 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
-	const openModalBtn = document.getElementById ('openModalBtn','openModalBtn1')
-	const closeModalBtn = document.getElementById('closeModalBtn','closeModalBtn1')
-	const modal = document.getElementById('modal','modal1')
+	const openModalBtns = document.querySelectorAll('#openModalBtn, #openModalBtn1')
+	const closeModalBtns = document.querySelectorAll('#closeModalBtn, #closeModalBtn1')
+	const modals = document.querySelectorAll('#modal, #modal1')
 
-	if (openModalBtn && closeModalBtn && modal) {
-		openModalBtn.addEventListener('click', openModal)
-		closeModalBtn.addEventListener('click', closeModal)
+	if (openModalBtns.length > 0 && closeModalBtns.length > 0 && modals.length > 0) {
+		openModalBtns.forEach((btn, index) => {
+			btn.addEventListener('click', () => openModal(modals[index]));
+		});
+		closeModalBtns.forEach((btn, index) => {
+			btn.addEventListener('click', () => closeModal(modals[index]));
+		});
 	} else {
-		console.error('No se encontraron elementos con los ID especificados.')
+		console.error('No se encontraron elementos con los ID especificados.');
 	}
 
-	function openModal() {
+	function openModal(modal) {
 		if (modal) {
-			modal.classList.remove('hidden')
+			modal.classList.remove('hidden');
 		}
 	}
 
-	function closeModal() {
+	function closeModal(modal) {
 		if (modal) {
-			modal.classList.add('hidden')
+			modal.classList.add('hidden');
 		}
 	}
+
 	window.addEventListener('click', function (event) {
-		if (event.target === modal) {
-			closeModal()
-		}
-	})
-})
+		modals.forEach(modal => {
+			if (event.target === modal) {
+				closeModal(modal);
+			}
+		});
+	});
+});

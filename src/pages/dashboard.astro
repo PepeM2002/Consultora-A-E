@@ -1,6 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/Layoutcursos.astro";
 import { supabase } from "../lib/supabase";
+import Principio from "../components/Cursos/Principio.astro";
 
 const { cookies, redirect } = Astro;
 
@@ -30,9 +31,14 @@ if (error) {
 const email = data?.user?.email;
 ---
 <Layout title="panel de control">
-  <h1>Bienvenido {email}</h1>
-  <p>Estamos felices de verte aquí</p>
-  <form action="/api/auth/signout">
-    <button type="submit">Cerrar sesión</button>
-  </form>
+  <div class="flex justify-end">
+<div class="flex flex-grow text-lg ">
+  <h1>Bienvenido {email} Estamos felices de verte aquí</h1>
+</div>
+   <br>
+    <form action="/api/auth/signout">
+      <button type="submit">Cerrar sesión</button>
+    </form>
+  </div>
+  <Principio/>
 </Layout>

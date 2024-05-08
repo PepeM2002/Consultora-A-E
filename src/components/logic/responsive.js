@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function responsive() {
         if (window.innerWidth < 526) {
             nombre.style.display = 'none';
-            logo.style.marginLeft = '0';
+            logo.style.marginLeft = '19px';
         } else {
             nombre.style.display = 'block';
-            logo.style.marginLeft = '8px;'
+            logo.style.marginLeft = '15px;'
         }
     }
     responsive()
