@@ -18,24 +18,24 @@ document.addEventListener('DOMContentLoaded', function () {
          modal.classList.remove('hidden')
       }
    }
-      function closeModal(modal){
-         if(modal){
-            modal.classList.add('hidden')
+   function closeModal(modal) {
+      if (modal) {
+         modal.classList.add('hidden')
+      }
+   }
+   window.addEventListener('click', function (event) {
+      modal.forEach(modal => {
+         if (event.target === modal) {
+            closeModal(modal)
          }
-      }
-      window.addEventListener('click', function(event){
-         modal.forEach(modal =>{
-            if(event.target === modal){
-               closeModal(modal)
-            }
-         })
       })
-    // Event listener para la tecla "Esc"
-    document.addEventListener('keyup', function (event) {
+   })
+   // Event listener para la tecla "Esc"
+   document.addEventListener('keyup', function (event) {
       if (event.key === 'Escape' || event.key === 'Esc') {
-          modal.forEach(modal => {
-              closeModal(modal);
-          });
+         modal.forEach(modal => {
+            closeModal(modal);
+         });
       }
-  });
+   });
 });

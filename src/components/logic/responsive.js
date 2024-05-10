@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        handleResize(); 
-        window.addEventListener('resize', handleResize); 
+        handleResize();
+        window.addEventListener('resize', handleResize);
     } else {
         console.error(
             "No se encontraron los elementos con los ID 'mobile-menu-toggle' o 'mobile-menu'"
