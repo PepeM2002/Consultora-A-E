@@ -7,8 +7,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-      "json:server": "json-server --watch cursos.json"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -26,13 +25,5 @@
   "description": "![image](https://github.com/PepeM2002/Consultora-A-E/assets/91429290/1a07aaa7-3f0d-4559-9bb9-3aea1ce22bac)",
   "main": "index.js",
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "json-server": "^0.17.0"
-
-  },
-  "repository": {
-    "type": "git",
-    "url": "test"
-  }
+  "license": "ISC"
 }
