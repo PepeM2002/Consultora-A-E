@@ -9,9 +9,7 @@ import node from "@astrojs/node";
 export default defineConfig({
   output: 'server',
   integrations: [tailwind()],
-  adapter: node({
-    mode: "standalone"
-  }),
+  adapter: cloudflare(),
   image: {
     // Example: Enable the Sharp-based image service with a custom config
     service: {
