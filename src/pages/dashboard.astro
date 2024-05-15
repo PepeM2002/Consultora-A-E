@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layoutcursos.astro";
 import { supabase } from "../lib/supabase";
-import Principio from "../components/Cursos/Principio.astro";
+import Admin from "../components/Cursos/admin.html";
 
 const { cookies, redirect } = Astro;
 
@@ -40,5 +40,5 @@ const email = data?.user?.email;
       <button type="submit">Cerrar sesión</button>
     </form>
   </div>
-  <Principio/>
+<Admin/>
 </Layout>
